@@ -43,7 +43,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["upload"]) & SUDOERS)
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('SEND ME TXT FILE')
+    editable = await m.reply_text('SEND ME TXT FILE TO DOWNLOAD')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -65,7 +65,7 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n**𝕊ᴇɴᴅ 𝔽ʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤** **1**")
+    await editable.edit(f"Total Links **{len(links)}**\n\nLike **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -76,7 +76,7 @@ async def account_login(bot: Client, m: Message):
     await input1.delete(True)
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n144,240,360,480,720,1080 please choose quality")
+    await editable.edit("**Quality**\n144,240,360,480,720,1080 please choose quality")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -100,7 +100,7 @@ async def account_login(bot: Client, m: Message):
     
     
 
-    await editable.edit("Now Enter A Caption to add caption on your uploaded file")
+    await editable.edit("**Download By -  **")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -162,8 +162,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
-                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
+                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}\n\n**Title  »** {name1} {res} 🅲🆁🅰🆉🆈_🅼🅸🅽🅳.mkv\n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
+                cc1 = f'**[📁] Pdf_ID:** {str(count)..zfill(3)}\n\n**Title »** {name1} 🅲🆁🅰🆉🆈_🅼🅸🅽🅳.pdf \n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
