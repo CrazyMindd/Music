@@ -9,12 +9,7 @@ import subprocess
 
 import core as helper
 from utils import progress_bar
-from vars import API_ID as api_id
-from vars import API_HASH as api_hash
-from vars import BOT_TOKEN as bot_token
-from vars import OWNER_ID as owner
-from vars import SUDO_USERS as sudo_users
-
+from vars import api_id, api_hash, bot_token
 from aiohttp import ClientSession
 from pyromod import listen
 from subprocess import getstatusoutput
@@ -28,34 +23,27 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 bot = Client(
-    name=":memory:",
+    "bot",
     api_id=api_id,
     api_hash=api_hash,
-    bot_token=bot_token,
-)
+    bot_token=bot_token)
 
-SUDOERS = filters.user()
 
-for x in sudo_users:
-    SUDOERS.add(int(x))
-if owner not in SUDOERS:
-    SUDOERS.add(int(owner))
-
-@bot.on_message(filters.command(["start"]) & SUDOERS)
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"BOT MADE BY - TITANIC  [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nGIVE COMMAND - /TITANIC")
+    editable = await m.reply_text("**ℍɪɪ** ┈━═My Freind═━┈😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
 
 
-@bot.on_message(filters.command("stop") & SUDOERS)
+@bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**STOPPED**", True)
+    await m.reply_text("**Stopped**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["TITANIC"]) & SUDOERS)
+@bot.on_message(filters.command(["upload"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('GIVE ME TXT FILE')
+    editable = await m.reply_text('𝕋𝕆 ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ᴛxᴛ ғɪʟᴇ 𝕤ᴇɴᴅ ʜᴇʀᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -72,23 +60,23 @@ async def account_login(bot: Client, m: Message):
        os.remove(x)
             # print(len(links)
     except:
-           await m.reply_text("Invalid file input.")
+           await m.reply_text("**Invalid file input.**")
            os.remove(x)
            return
     
    
-    await editable.edit(f"Total Links **{len(links)}**\n\nLike **1**")
+    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n**𝕊ᴇɴᴅ 𝔽ʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤** **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Batch Name**")
+    await editable.edit("**Now Please Send Me Your Batch Name**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
     
 
-    await editable.edit("**Quality**")
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n144,240,360,480,720,1080 please choose quality")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -112,17 +100,17 @@ async def account_login(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Download By - **")
+    await editable.edit("Now Enter A Caption to add caption on your uploaded file")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
     highlighter  = f"️ ⁪⁬⁮⁮⁮"
-    if raw_text3 == 'Co':
+    if raw_text3 == 'Robin':
         MR = highlighter 
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the **Thumbnail Link **\nEg : ```https://telegra.ph/file/14e207b8864a214b7068a.jpg```\n\nor Send `no`")
+    await editable.edit("Now send the Thumb url/nEg » https://telegra.ph/file/1bf523c4b51530e57e84d.jpg \n Or if don't want thumbnail send = no")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -174,8 +162,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**Vid_id  »** {str(count).zfill(3)}\n\n**Title  »** {name1} {res} 🅲🆁🅰🆉🆈_🅼🅸🅽🅳.mkv\n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
-                cc1 = f'**Vid_id  »** {str(count).zfill(3)}\n\n**Title »** {name1} 🅲🆁🅰🆉🆈_🅼🅸🅽🅳.pdf \n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
+                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
+                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n**𝔹ᴀᴛᴄʜ** » **{raw_text0}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -201,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}"
+                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -212,13 +200,13 @@ async def account_login(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                    f"**downloading failed 🚫**\n{str(e)}\n**Name** - {name}"
+                    f"**downloading Interupted **\n{str(e)}\n**Name** » {name}\n**Link** » `{url}`"
                 )
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text(" D O N E ")
+    await m.reply_text("**𝔻ᴏɴᴇ 𝔹ᴏ𝕤𝕤😎**")
 
 
 bot.run()
