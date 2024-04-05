@@ -92,11 +92,7 @@ async def account_login(bot: Client, m: Message):
         elif raw_text2 == "720":
             res = "1280x720"
         elif raw_text2 == "1080":
-            res = "1920x1080"
-        elif raw_text2 == "1440":
-            res = "2560x1440"
-        elif raw_text2 == "2160":
-            res = "3840x2160"
+            res = "1920x1080
         else: 
             res = "UN"
     except Exception:
