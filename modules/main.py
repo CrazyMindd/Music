@@ -23,7 +23,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 bot = Client(
-    "bot",
+    name=":memory:",
     api_id=api_id,
     api_hash=api_hash,
     bot_token=bot_token)
