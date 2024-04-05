@@ -34,19 +34,19 @@ bot = Client(
     bot_token=bot_token)
 
 
-@bot.on_message(filters.command(["start"]) & SUDOERS)
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("BOT MADE BY - 🅲🆁🅰🆉🆈_🅼🅸🅽🅳😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
 
 
-@bot.on_message(filters.command("stop") & SUDOERS)
+@bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
     await m.reply_text("**Stopped**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["upload"]) & SUDOERS)
+@bot.on_message(filters.command(["upload"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('SEND ME TXT FILE TO DOWNLOAD')
     input: Message = await bot.listen(editable.chat.id)
