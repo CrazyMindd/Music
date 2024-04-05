@@ -76,7 +76,7 @@ async def account_login(bot: Client, m: Message):
     await input1.delete(True)
     
 
-    await editable.edit("**Quality**\n144,240,360,480,720,1080,1440,2160 please choose quality")
+    await editable.edit("**Quality**\n144,240,360,480,720,1080 please choose quality")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -92,7 +92,7 @@ async def account_login(bot: Client, m: Message):
         elif raw_text2 == "720":
             res = "1280x720"
         elif raw_text2 == "1080":
-            res = "1920x1080
+            res = "1920x1080"
         else: 
             res = "UN"
     except Exception:
